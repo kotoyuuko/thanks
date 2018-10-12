@@ -13,7 +13,7 @@ class PagesController extends Controller
     public function root()
     {
         $total = Payment::where('status', 'paid')->sum('price');
-        $payments = Payment::where('status', 'paid')->paginate(10);
+        $payments = Payment::where('status', 'paid')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('pages.root', [
             'total' => $total / 100,
