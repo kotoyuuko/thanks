@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <label for="inputSaying" class="col-sm-2 control-label">留言</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" rows="3" id="inputSaying" placeholder="这个是用来显示头像的～"></textarea>
+                                <textarea class="form-control" rows="3" id="inputSaying" placeholder="顺便说几句话吧～"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -61,7 +61,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">最后点一下</label>
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-success btn-block">打赏</button>
+                                <button type="button" class="btn btn-success btn-block" id="pay">打赏</button>
                             </div>
                         </div>
                     </form>
