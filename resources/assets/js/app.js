@@ -69,7 +69,8 @@ $(function () {
             return;
         }
         if (!saying) {
-            saying = '这位大佬什么也没说～';
+            showMessage('大佬再说点什么吧～');
+            return;
         }
         if (price == '0') {
             showMessage('我很可爱，请给我钱！');
