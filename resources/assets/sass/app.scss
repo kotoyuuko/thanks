@@ -3,7 +3,7 @@
 
 body {
     font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial,sans-serif;
-    background-color: #FCFAF2;
+    background-color: #fcfaf2;
 }
 
 .container {
@@ -12,4 +12,23 @@ body {
 
 .logo {
     margin-bottom: 50px;
+}
+
+.meta {
+    font-size:0.9em;
+    color: #b3b3b3;
+    a {
+        color: #b3b3b3;
+    }
+}
+
+.price {
+    color: #cb1b45;
+}
+
+hr {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border: 0;
+    border-top: 1px solid #dcebf5;
 }

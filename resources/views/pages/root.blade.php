@@ -22,7 +22,7 @@
             <div class="panel panel-default">
                 <div class="panel-body text-center">
                     <span>我一共收到了</span>
-                    <span class="text-info">¥ 0.00</span>
+                    <span class="text-info">¥ {{ $total }}</span>
                     <span>零花钱！</span>
                 </div>
             </div>
@@ -67,6 +67,40 @@
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul class="media-list">
+                        @if (count($payments))
+                            @foreach ($payments as $payment)
+                                <li class="media">
+                                    <div class="media-left">
+                                        <img class="media-object img-thumbnail" style="width: 52px; height: 52px;" src="https://gravatar.loli.net/avatar/{{ md5($payment->email) }}?s=52&r=G&d=">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="media-heading">
+                                            {{ $payment->name }}：<span class="price">¥ {{ $payment->price / 100 }}</span>
+                                        </div>
+                                        <div class="media-body meta">
+                                            {{ $payment->saying }}
+                                            <span> • </span>
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            <span class="time" title="打赏于">{{ $payment->updated_at->diffForHumans() }}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                @if (!$loop->last)
+                                    <hr>
+                                @endif
+                            @endforeach
+                            <div class="text-right">
+                                {{ $payments->links() }}
+                            </div>
+                        @else
+                            <div class="empty-block">暂无数据 ~_~ </div>
+                        @endif
+                    </ul>
                 </div>
             </div>
         </div>
