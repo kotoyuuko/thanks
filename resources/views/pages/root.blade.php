@@ -30,23 +30,25 @@
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <form class="form-horizontal">
+                    <form id="payForm" class="form-horizontal" method="POST" action="{{ route('pay') }}">
+                        {{ csrf_field() }}
+                        <input id="inputPrice" type="hidden" name="price">
                         <div class="form-group">
                             <label for="inputName" class="col-sm-2 control-label">称呼</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputName" placeholder="做好事要留名～">
+                                <input name="name" type="text" class="form-control" id="inputName" placeholder="做好事要留名～">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail" placeholder="这个是用来显示头像的～">
+                                <input name="email" type="email" class="form-control" id="inputEmail" placeholder="这个是用来显示头像的～">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputSaying" class="col-sm-2 control-label">留言</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" rows="3" id="inputSaying" placeholder="顺便说几句话吧～"></textarea>
+                                <textarea name="saying" class="form-control" rows="3" id="inputSaying" placeholder="顺便说几句话吧～"></textarea>
                             </div>
                         </div>
                         <div class="form-group">

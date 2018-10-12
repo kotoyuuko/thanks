@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'PagesController@root')->name('root');
+Route::post('pay', 'PagesController@pay')->name('pay');

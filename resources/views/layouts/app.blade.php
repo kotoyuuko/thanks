@@ -26,9 +26,7 @@
                     </button>
                     <h4 class="modal-title" id="myModalLabel">仔细看下面！</h4>
                 </div>
-                <div class="modal-body" id="msg-body">
-                ...
-                </div>
+                <div class="modal-body" id="msg-body"></div>
             </div>
         </div>
     </div>

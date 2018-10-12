@@ -71,7 +71,13 @@ $(function () {
         if (!saying) {
             saying = '这位大佬什么也没说～';
         }
+        if (price == '0') {
+            showMessage('我很可爱，请给我钱！');
+            return;
+        }
 
-        showMessage('test');
+        $('#inputPrice').val(price);
+
+        $('#payForm').submit();
     });
 });
