@@ -10,7 +10,7 @@
     <div class="row">
         <div class="hidden-xs col-md-3 text-right">
             <h4>我一共收到了</h4>
-            <h2 class="text-info">¥ 0.00</h2>
+            <h2 class="text-info">¥ {{ $total }}</h2>
             <h4>零花钱</h4>
             <hr>
             <small>本站自豪地使用了</small><br>

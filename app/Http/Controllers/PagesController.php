@@ -12,7 +12,11 @@ class PagesController extends Controller
 {
     public function root()
     {
-        return view('pages.root');
+        $total = Payment::where('status', 'paid')->sum('price');
+
+        return view('pages.root', [
+            'total' => $total / 100
+        ]);
     }
 
     public function pay(PayRequest $request)
