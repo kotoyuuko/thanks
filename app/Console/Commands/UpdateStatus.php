@@ -43,11 +43,11 @@ class UpdateStatus extends Command
 
         foreach ($payments as $payment) {
             $result = \Youzan::get('youzan.trades.qr.get', [
-                'qr_id' => $payment->payment_id, 
+                'qr_id' => $payment->payment_id,
                 'status' => 'TRADE_RECEIVED'
             ]);
             $response = $result['response'];
-       
+
             if ($response['total_results'] > 0) {
                 $payment->status = 'paid';
                 $payment->save();
