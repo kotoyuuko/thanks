@@ -42,11 +42,13 @@ class UpdateStatus extends Command
         $payments = Payment::where('status', 'unpaid')->get();
 
         foreach ($payments as $payment) {
-            $client = new Client();
-            $response = json_decode($client->get('https://api.void.cx/api/payment/'.$payment->payment_id)
-                ->getBody()->getContents(), true);
-            
-            if ($response['status'] == 'paid') {
+            $result = \Youzan::get('youzan.trades.qr.get', [
+                'qr_id' => $payment->payment_id, 
+                'status' => 'TRADE_RECEIVED'
+            ]);
+            $response = $result['response'];
+       
+            if ($response['total_results'] > 0) {
                 $payment->status = 'paid';
                 $payment->save();
             }

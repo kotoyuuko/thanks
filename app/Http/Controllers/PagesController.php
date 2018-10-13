@@ -31,24 +31,24 @@ class PagesController extends Controller
             'status' => 'unpaid'
         ]);
 
-        $client = new Client();
-        $response = json_decode($client->post('https://api.void.cx/api/payment', [
-            'query' => [
-                'title' => '打赏 kotoyuuko 零花钱',
-                'price' => $payment->price
-            ]
-        ])->getBody()->getContents(), true);
+        $result = \Youzan::get('youzan.pay.qrcode.create', [
+            'qr_type' => 'QR_TYPE_DYNAMIC',
+            'qr_price' => $payment->price,
+            'qr_name' => '打赏 kotoyuuko 零花钱',
+            'qr_source' => $payment->id,
+        ]);
+        $response = $result['response'];
 
-        $payment->payment_id = $response['id'];
+        $payment->payment_id = $response['qr_id'];
         $payment->save();
 
         $agent = new Agent();
 
         if ($agent->isMobile()) {
-            return redirect()->to($response['pay_url']);
+            return redirect()->to($response['qr_url']);
         } else {
             return view('pages.payment', [
-                'qrcode' => $response['qrcode']
+                'qrcode' => $response['qr_code']
             ]);
         }
     }
