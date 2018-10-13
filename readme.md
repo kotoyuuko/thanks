@@ -61,6 +61,17 @@
     php artisan view:clear
     php artisan storage:link
 
+#### 生成前端资源
+
+先去装个 yarn，然后：
+
+    yarn
+
+如果用的是国内服务器建议走淘宝的镜像：
+
+    yarn config set registry https://registry.npm.taobao.org
+    SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass yarn
+
 #### 添加计划任务
 
     crontab -u www -e
