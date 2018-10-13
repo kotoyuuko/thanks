@@ -16,7 +16,7 @@
             <small>本站自豪地使用了</small><br>
             <small>世界上最好的 PHP 语言开发</small>
             <hr>
-            <small>&copy; 2018 kotoyuuko</small>
+            <small>&copy; 2018 <a href="https://artifact.moe" target="_blank">kotoyuuko</a></small>
         </div>
         <div class="visible-xs-block col-md-3">
             <div class="panel panel-default">
@@ -109,7 +109,7 @@
         <hr>
         <div class="col-md-3 text-center">
             <small>本站自豪地使用了世界上最好的 PHP 语言开发</small><br>
-            <small>&copy; 2018 kotoyuuko</small>
+            <small>&copy; 2018 <a href="https://artifact.moe" target="_blank">kotoyuuko</a></small>
         </div>
     </div>
 @stop

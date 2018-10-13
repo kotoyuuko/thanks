@@ -34,7 +34,7 @@ class PagesController extends Controller
         $result = \Youzan::get('youzan.pay.qrcode.create', [
             'qr_type' => 'QR_TYPE_DYNAMIC',
             'qr_price' => $payment->price,
-            'qr_name' => '打赏 kotoyuuko 零花钱',
+            'qr_name' => '打赏 '.env('MY_NAME', 'kotoyuuko').' 零花钱',
             'qr_source' => $payment->id,
         ]);
         $response = $result['response'];

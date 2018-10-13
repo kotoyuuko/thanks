@@ -79,6 +79,8 @@ $(function () {
 
         $('#inputPrice').val(price);
 
+        $("#pay").attr("disabled", true);
+
         $('#payForm').submit();
     });
 });
