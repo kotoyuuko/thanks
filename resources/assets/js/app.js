@@ -31,28 +31,42 @@ $(function () {
         btnClick('233');
         btnUnclick('888');
         btnUnclick('1024');
-        btnUnclick('2333');
+        btnUnclick('custom');
+        $('#customprice').attr('disabled', true);
     });
     $('#price-888').click(function () {
         price = '888';
         btnClick('888');
         btnUnclick('233');
         btnUnclick('1024');
-        btnUnclick('2333');
+        btnUnclick('custom');
+        $('#customprice').attr('disabled', true);
     });
     $('#price-1024').click(function () {
         price = '1024';
         btnClick('1024');
         btnUnclick('888');
         btnUnclick('233');
-        btnUnclick('2333');
+        btnUnclick('custom');
+        $('#customprice').attr('disabled', true);
     });
-    $('#price-2333').click(function () {
-        price = '2333';
-        btnClick('2333');
+    $('#price-custom').click(function () {
+        price = 'custom';
+        btnClick('custom');
         btnUnclick('888');
-        btnUnclick('1024');
         btnUnclick('233');
+        btnUnclick('1024');
+        $('#customprice').attr('disabled', false);
+    });
+    $('#customprice').blur(function () {
+        $('#customprice').val(function () {
+            let res = parseFloat($('#customprice').val()).toFixed(2);
+            if (isNaN(res)) {
+                return '输错啦！';
+            } else {
+                return res;
+            }
+        });
     });
 
     $('#pay').click(function () {
@@ -72,7 +86,10 @@ $(function () {
             showMessage('大佬再说点什么吧～');
             return;
         }
-        if (price == '0') {
+        if (price == 'custom') {
+            price = parseInt(parseFloat($('#customprice').val()).toFixed(2) * 100);
+        }
+        if (isNaN(price) || price == '0') {
             showMessage('我很可爱，请给我钱！');
             return;
         }

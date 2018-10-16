@@ -53,11 +53,20 @@
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">金额</label>
-                            <div class="col-sm-10">
-                                <button type="button" class="btn btn-default" id="price-233">¥ 2.33</button>
-                                <button type="button" class="btn btn-default" id="price-888">¥ 8.88</button>
-                                <button type="button" class="btn btn-default" id="price-1024">¥ 10.24</button>
-                                <button type="button" class="btn btn-default" id="price-2333">¥ 23.33</button>
+                            <div class="col-sm-7">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default" id="price-233">¥ 2.33</button>
+                                    <button type="button" class="btn btn-default" id="price-888">¥ 8.88</button>
+                                    <button type="button" class="btn btn-default" id="price-1024">¥ 10.24</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default" id="price-custom">自定</button>
+                                    </div>
+                                    <input type="text" id="customprice" class="form-control" disabled>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
