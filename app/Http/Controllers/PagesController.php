@@ -44,7 +44,7 @@ class PagesController extends Controller
 
         $agent = new Agent();
 
-        if ($agent->isMobile()) {
+        if ($agent->isPhone()) {
             return redirect()->to($response['qr_url']);
         } else {
             return view('pages.payment', [
